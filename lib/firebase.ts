@@ -29,7 +29,7 @@ async function testFirebaseConnection() {
       } else {
         console.log("Successfully connected to Firebase and fetched data from 'properties' collection")
       }
-    } catch (error) {
+    } catch (error: any) { // Type annotation added to fix the error
       if (error.code === "permission-denied") {
         console.error("Failed to connect to Firebase: Permission denied. Please check your security rules.")
       } else {
@@ -42,4 +42,3 @@ async function testFirebaseConnection() {
 testFirebaseConnection()
 
 export { db }
-
